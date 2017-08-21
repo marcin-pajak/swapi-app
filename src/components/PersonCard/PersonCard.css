@@ -1,0 +1,31 @@
+.Card {
+    border: 1px solid #eaeaea;
+    border-radius: 2px;
+    color: #667;
+    display: block;
+    min-height: 110px;
+    padding: 1rem;
+    text-align: left;
+    text-decoration: none;
+}
+
+.Card-title {
+    font-size: 1.2rem;
+    margin: .5rem 0;
+}
+
+.Card-details {
+    margin: .5rem 0;
+}
+
+.Card-link {
+    color: #14509F;
+    display: inline-block;
+    margin: .25rem 0;
+}
+
+.Card:hover .Card-title,
+.Card:hover .Card-link {
+    color: #0B1B36;
+    text-decoration: underline;
+}

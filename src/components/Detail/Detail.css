@@ -1,0 +1,20 @@
+.Detail {
+    text-align: left;
+}
+
+.Detail-title {
+    margin: 2rem 0 .5rem;
+}
+
+.Detail-subtitle {
+    margin: 1.5rem 0 .5rem;
+}
+
+.Detail-desc {
+    margin: .5rem 1rem 1rem 2.5rem;
+    padding: 0;
+}
+
+.Detail-homies {
+    margin: 1rem 0;
+}
