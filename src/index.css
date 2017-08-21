@@ -143,6 +143,21 @@ a:hover {
   text-align: left;
 }
 
+.Error {
+  margin-top: 3rem;
+  text-align: center;
+}
+
+.Error--big {
+  color: #212121;
+  font-size: 1.2rem;
+  margin: 2rem 0;
+}
+
+.Error-message {
+  margin: .5rem 0;
+}
+
 .u-color--primary {
   color: #212121;
 }

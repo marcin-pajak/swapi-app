@@ -20,7 +20,11 @@ const Detail = ({person, planet, otherResidents}) => {
         <li>Eye color: <span className="u-color--primary">{person.eye_color}</span></li>
         <li>Hair color: <span className="u-color--primary">{person.hair_color}</span></li>
         <li>Skin color: <span className="u-color--primary">{person.skin_color}</span></li>
-        <li>Home planet: {planet ? <span className="u-color--primary" itemProp="birthPlace">{planet.name}</span> : "Loading..."}</li>
+        <li>
+          Home planet: {planet ?
+            planet.error ? <span>{planet.errorMessage}</span> : <span className="u-color--primary" itemProp="birthPlace">{planet.name}</span>
+          : "Loading..."}
+        </li>
       </ul>
 
       <h3 className="Detail-subtitle">Other people from the same planet:</h3>
@@ -32,7 +36,8 @@ const Detail = ({person, planet, otherResidents}) => {
           ))}
         </ul>
       </div>
-      { planet && !otherResidents.length ? <p>There are no other people from {planet.name} in Star Wars</p> : null}
+      { planet && !otherResidents.length && !planet.error ? <p>There are no other people from {planet.name} in Star Wars</p> : null}
+      { planet && planet.error ? <p>{planet.errorMessage}</p> : null}
     </section>
   );
 };

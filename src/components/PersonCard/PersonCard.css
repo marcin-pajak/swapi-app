@@ -24,6 +24,11 @@
     margin: .25rem 0;
 }
 
+.Card-loading {
+    margin-top: 3rem;
+    text-align: center;
+}
+
 .Card:hover .Card-title,
 .Card:hover .Card-link {
     color: #0B1B36;

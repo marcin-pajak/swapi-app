@@ -5,7 +5,18 @@ import './PersonCard.css';
 
 const Card = ({person}) => {
   if (!person) {
-    return <div className="Card"><p>Loading...</p></div>
+    return (
+      <div className="Card">
+        <p className="Card-loading">Loading...</p>
+      </div>
+    )
+  }
+  if (person.error) {
+    return (
+      <div className="Card">
+        <p className="Error">{person.errorMessage}</p>
+      </div>
+    )
   }
   return (
     <NavLink to={urlToRoute(person.url)} className="Card">

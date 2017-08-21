@@ -31,5 +31,5 @@ export const fetchPlanet = (url) => (dispatch) => {
     .then(json => {
       dispatch({type: types.PLANET_RECEIVE, data: normalize(json, schema.planetSchema)})
     })
-    .catch(error => dispatch({type: types.PLANET_FETCH_FAIL, error}));
+    .catch(error => dispatch({type: types.PLANET_FETCH_FAIL, error, url}));
 };

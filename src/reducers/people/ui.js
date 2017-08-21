@@ -73,3 +73,7 @@ export const getCurrentSorting = (state) => {
 export const getCurrentFilter = (state) => {
   return state.ui.filter;
 };
+
+export const getPeopleError = (state) => {
+  return state.ui.error;
+};

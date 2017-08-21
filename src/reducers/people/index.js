@@ -13,6 +13,14 @@ const byId = (state = {}, action) => {
         ...state,
         ...action.data.entities.people
       };
+    case types.PERSON_FETCH_FAIL:
+      return {
+        ...state,
+        [action.url]: {
+          error: action.error,
+          errorMessage: action.error.message || "Couldn't fetch"
+        }
+      };
     default:
       return state;
   }

@@ -1,12 +1,19 @@
 import React from 'react';
 import {connect} from 'react-redux';
-import { getVisiblePeople, hasMorePeople, getIsFetching } from '../reducers/index';
+import { getVisiblePeople, hasMorePeople, getIsFetching, getPeopleError } from '../reducers/index';
 import Card from '../components/PersonCard';
 import Spinner from '../components/Spinner';
 
 import { fetchPeople } from '../actions/people';
 
-const PeopleListContainer = ({people, hasMore, isFetching, onLoadMore}) => {
+const PeopleListContainer = ({people, error, hasMore, isFetching, onLoadMore}) => {
+  if (error) {
+    return (<div className="Error Error--big">
+        <p className="Error-message">{error.message}</p>
+        <p className="Error-message">Please try to refresh the page.</p>
+      </div>)
+  }
+
   const spinnerPart = isFetching ? (
     <Spinner />
   ) : null;
@@ -48,6 +55,7 @@ const mapStateToProps = (
   state,
   ownProps
 ) => ({
+  error: getPeopleError(state),
   people: getVisiblePeople(state),
   hasMore: hasMorePeople(state),
   isFetching: getIsFetching(state)

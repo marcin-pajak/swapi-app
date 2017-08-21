@@ -61,4 +61,8 @@ export const getCurrentFilter = (state) => {
   return fromPeople.getCurrentFilter(state.people);
 };
 
+export const getPeopleError = (state) => {
+  return fromPeople.getPeopleError(state.people);
+}
+
 export default app;

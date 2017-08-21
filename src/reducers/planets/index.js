@@ -9,6 +9,15 @@ const byId = (state = {}, action) => {
         ...state,
         ...action.data.entities.planets
       };
+    case types.PLANET_FETCH_FAIL:
+      return {
+        ...state,
+        [action.url]: {
+          residents: [],
+          error: action.error,
+          errorMessage: action.error.message || "Couldn't fetch planet"
+        }
+      };
     default:
       return state;
   }

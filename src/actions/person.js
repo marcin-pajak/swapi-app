@@ -35,5 +35,5 @@ export const fetchPerson = (url) => (dispatch) => {
       dispatch({type: types.PERSON_RECEIVE, data: normalize(json, schema.personSchema)});
       dispatch(fetchPlanetIfNeeded(json.homeworld));
     })
-    .catch(error => dispatch({type: types.PERSON_FETCH_FAIL, error}));
+    .catch(error => dispatch({type: types.PERSON_FETCH_FAIL, error, url}));
 };
